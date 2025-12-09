@@ -71,6 +71,8 @@ st.set_page_config(page_title="卒論アプリ（拡張・RSES6＋AIミッショ
 # debug (can remove)
 try:
     st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets.get("OPENAI_KEY")))
+    st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets['test.py']["OPENAI_KEY"]))
+
 except Exception:
     st.write("DEBUG_API_KEY_PRESENT: unknown")
 
