@@ -83,6 +83,9 @@ try:
     #st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets.get("OPENAI_KEY")))
     #st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets['test']["api_key"]))
     st.write("DEBUG_API_KEY_PRESENT:", st.secrets['test']["api_key"][0])
+    openai.api_key = st.secrets['test']["api_key"]
+    client = openai
+    openai_client_inited = True
 
 except Exception:
     st.write("DEBUG_API_KEY_PRESENT: unknown")
