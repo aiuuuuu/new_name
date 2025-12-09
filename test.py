@@ -302,7 +302,8 @@ def try_generate_missions():
             out.append(fallback[len(out)])
         return out
     except Exception:
-        return fallback
+        #return fallback
+        return [fallback[0]+"aaaaa"] +fallback[1:]
 
 # -------------------------
 # フィードバック生成（ラッパー）
@@ -311,7 +312,7 @@ def generate_feedback_from_prompt(prompt):
     """Low-level wrapper: try OpenAI then fallback text."""
     fallback_short = "フィードバックを生成できませんでした。食事改善のポイントを意識してください。"
     if not client or not openai_client_inited:
-        return fallback_short
+        return fallback_short+"aaaaaaaaS"
     try:
         if hasattr(client, "chat") and hasattr(client.chat, "completions"):
             resp = client.chat.completions.create(
