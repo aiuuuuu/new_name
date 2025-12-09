@@ -81,7 +81,8 @@ except Exception:
 # debug (can remove)
 try:
     #st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets.get("OPENAI_KEY")))
-    st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets['test']["api_key"]))
+    #st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets['test']["api_key"]))
+    st.write("DEBUG_API_KEY_PRESENT:", bool(st.secrets['test']["api_key"][0]))
 
 except Exception:
     st.write("DEBUG_API_KEY_PRESENT: unknown")
