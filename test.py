@@ -10,7 +10,7 @@
 
 import streamlit as st
 import datetime, calendar, os, json
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 # -------------------------
 # OpenAI クライアント初期化（新/旧どちらにも対応）
@@ -41,7 +41,7 @@ except Exception:
     # fallback to legacy openai
     try:
         import openai
-        load_dotenv()
+        #load_dotenv()
         k = None
         try:
             k = st.secrets.get("OPENAI_KEY")
@@ -60,7 +60,7 @@ except Exception:
         client = None
         openai_client_inited = False
 
-load_dotenv()
+#load_dotenv()
 
 # -------------------------
 # 設定
