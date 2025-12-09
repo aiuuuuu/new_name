@@ -22,6 +22,8 @@ st.set_page_config(page_title="卒論アプリ（拡張・RSES6＋AIミッショ
 # -------------------------
 client = None
 openai_client_inited = False
+
+print("testtes")
 try:
     # prefer new client style (OpenAI)
     from openai import OpenAI
