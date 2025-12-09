@@ -13,6 +13,11 @@ import datetime, calendar, os, json
 #from dotenv import load_dotenv
 
 # -------------------------
+# 設定
+# -------------------------
+st.set_page_config(page_title="卒論アプリ（拡張・RSES6＋AIミッション）", layout="centered", initial_sidebar_state="collapsed")
+
+# -------------------------
 # OpenAI クライアント初期化（新/旧どちらにも対応）
 # -------------------------
 client = None
@@ -67,10 +72,6 @@ except Exception:
 
 #load_dotenv()
 
-# -------------------------
-# 設定
-# -------------------------
-st.set_page_config(page_title="卒論アプリ（拡張・RSES6＋AIミッション）", layout="centered", initial_sidebar_state="collapsed")
 
 # debug (can remove)
 try:
