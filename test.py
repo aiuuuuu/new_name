@@ -44,7 +44,8 @@ except Exception:
         #load_dotenv()
         k = None
         try:
-            k = st.secrets.get("OPENAI_KEY")
+            #k = st.secrets.get("OPENAI_KEY")
+            k = st.secrets['test.py']["OPENAI_KEY"]
         except Exception:
             k = None
         if not k:
