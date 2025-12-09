@@ -28,7 +28,7 @@ try:
     api_key = None
     try:
         api_key = st.secrets['test']["api_key"]
-        st.write("key acce")
+        st.write("key acce", bool(api_key))
 
     except Exception:
         api_key = None
@@ -41,8 +41,11 @@ try:
         except Exception:
             client = None
             openai_client_inited = False
+            st.write("erro init", bool(api_key))
+
     else:
-        st.write("no key")
+        st.write("no key", bool(api_key))
+
 
         client = None
         openai_client_inited = False
