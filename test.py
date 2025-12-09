@@ -1087,11 +1087,12 @@ def ensure_today_mission():
         save_app(st.session_state.app_data)
     return missions[today]
 
+# ページ初期化
 if "page" not in st.session_state:
-    st.session_state.page = "init_register" if not st.session_state.registered else "self_esteem"
-
-if st.session_state.get("registered") and st.session_state.get("page") == "init_register":
-    st.session_state.page = "self_esteem"
+    if not st.session_state.get("registered", False):
+        st.session_state.page = "init_register"  # 未登録なら初回登録ページ
+    else:
+        st.session_state.page = "self_esteem"    # 登録済みなら自尊感情ページ
 
 page = st.session_state.get("page")
 if page == "init_register":
