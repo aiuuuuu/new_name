@@ -22,7 +22,7 @@ try:
     from openai import OpenAI
     api_key = None
     try:
-        api_key = st.secrets.get("OPENAI_KEY")
+        api_key = st.secrets['test']["api_key"]
     except Exception:
         api_key = None
     if not api_key:
@@ -45,7 +45,7 @@ except Exception:
         k = None
         try:
             #k = st.secrets.get("OPENAI_KEY")
-            k = st.secrets['test.py']["OPENAI_KEY"]
+            k = st.secrets['test']["api_key"]
         except Exception:
             k = None
         if not k:
