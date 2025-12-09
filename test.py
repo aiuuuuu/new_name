@@ -23,6 +23,8 @@ try:
     api_key = None
     try:
         api_key = st.secrets['test']["api_key"]
+        st.write("key acce")
+
     except Exception:
         api_key = None
     if not api_key:
@@ -35,6 +37,8 @@ try:
             client = None
             openai_client_inited = False
     else:
+        st.write("no key")
+
         client = None
         openai_client_inited = False
 except Exception:
@@ -302,8 +306,8 @@ def try_generate_missions():
             out.append(fallback[len(out)])
         return out
     except Exception:
-        #return fallback
-        return [fallback[0]+"aaaaa"] +fallback[1:]
+        return fallback
+        #return [fallback[0]+"aaaaa"] +fallback[1:]
 
 # -------------------------
 # フィードバック生成（ラッパー）
